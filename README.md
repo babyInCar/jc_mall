@@ -48,9 +48,39 @@ V、用户的接口
 # 文件目录
 jc_srv
     ------goods_srv
+        --- config  定义相关的配置信息
+        --- proto  定义相关的数据格式
+        --- handler 定义相关的接口方法
+        --- model  模型文件，定义相关的数据表
+        --- global 全局文件
+        --- tests 测试  
     ------inventory_srv
+        --- config  定义库存相关的配置信息
+        --- proto  定义库存相关的数据格式
+        --- handler 定义库存相关的接口方法
+        --- model  模型文件，定义相关的数据表
+        --- global 全局文件
+        --- tests 测试 
     ------order_srv
+        --- config 定义订单相关的配置信息
+        --- proto  定义订单相关的数据格式
+        --- handler 定义相关的接口方法
+        --- model  订单模型文件，定义相关的数据表
+        --- global 全局文件
+        --- tests 测试 
     ------user_srv
+        --- config  定义相关的配置信息
+        --- proto  定义用户相关的数据格式
+        --- handler 定义用户相关的接口方法
+        --- model  模型文件，定义用户相关的数据表
+        --- global 全局文件
+        --- tests 测试 
     ------userop_srv
+        --- config  定义相关的配置信息
+        --- proto  定义用户配置相关的数据格式
+        --- handler 定义用户配置相关的接口方法
+        --- model  模型文件，定义用户配置相关的数据表
+        --- global 全局文件
+        --- tests 测试 
     ------go.mod   需要安装的go模块，类似于python中的requirements.txt 文件
     ------go.sum
