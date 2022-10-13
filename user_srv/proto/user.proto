@@ -1,14 +1,14 @@
 syntax = "proto3";
-import "google/protobuf/empty.proto"
-option go_package=".;proto;"
+import "google/protobuf/empty.proto";
+option go_package = "./;proto";
 
 service User{
     rpc GetUserList(PageInfo)  returns(UserListResponse);
-    rpc GetUserByMobile(mobileRequest) returns(UserInfoResponse);
+    rpc GetUserByMobile(MobileRequest) returns(UserInfoResponse);
     rpc GetUserById(IdRequest) returns(UserInfoResponse);
     rpc CreateUser(CreateUserInfo) returns(UserInfoResponse);
-    rpc CreateUser(UpdateUserInfo) returns(google.protobuf.Empty);
-    rpc CheckPassWord(PasswordCheckInfo) return(CheckResponse);
+    rpc UpdateUser(UpdateUserInfo) returns(google.protobuf.Empty);
+    rpc CheckPassWord(PasswordCheckInfo) returns(CheckResponse);
 
 }
 
@@ -44,17 +44,17 @@ message UpdateUserInfo{
     int32 id = 1;
     string nickName = 2;
     string gender = 3;
-    uint birthday = 4;
+    uint64 birthDay = 4;
 }
 
 message UserInfoResponse{
     int32 id = 1;
-    string password = 2;
+    string passWord = 2;
     string mobile = 3;
     string nickName = 4;
-    uint64 birthday = 5;
+    uint64 birthDay = 5;
     string gender = 6;
-    uint32 role = 7; 
+    int32 role = 7;
 }
 
 message UserListResponse{
