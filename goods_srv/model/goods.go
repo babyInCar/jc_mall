@@ -12,14 +12,14 @@ type Category struct {
 	ParentCategoryID int32       `json:"parent"`
 	ParentCategory   *Category   `json:"-"`
 	SubCategory      []*Category `gorm:"foreignkey:ParentCategoryID;references:ID" json:"sub_category"`
-	Level            int32       `gorm:"type:int;not null;defaut:1" json:"level"`
-	IsTab            bool        `gorm:"default:false;not null" json:"name"`
+	Level            int32       `gorm:"type:int;not null;default:1" json:"level"`
+	IsTab            bool        `gorm:"default:false;not null" json:"is_tab"`
 }
 
 type Brands struct {
 	BaseModel
 	Name string `gorm:"type:varchar(20);not null"`
-	Logo string `gorm:"type:varchar(200);default '';not null"`
+	Logo string `gorm:"type:varchar(200);default:'';not null"`
 }
 
 type GoodsCategoryBrand struct {
